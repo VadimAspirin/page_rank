@@ -41,7 +41,6 @@ def hits(A):
     h_eig_value_argmax = np.argmax(h_eig_value)
     h = np.real(h[:,h_eig_value_argmax]).astype(float)
 
-
     a_eig_value, a = np.linalg.eig(AtA)
     a_eig_value_argmax = np.argmax(a_eig_value)
     a = np.real(a[:,a_eig_value_argmax]).astype(float)
@@ -106,7 +105,7 @@ if __name__== "__main__":
     sort_buf = np.array([hub, search_idx]).T
     sort_buf = sort_buf[sort_buf[:,0].argsort()]
     idx_hub_sort = sort_buf[:,1][::-1].astype(int)
-    
+
     print(u"[hits: hub: Армстронг]")
     for i in range(10):
         print(files[idx_hub_sort[i]])
